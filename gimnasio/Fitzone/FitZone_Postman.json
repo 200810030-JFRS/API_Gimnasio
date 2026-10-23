@@ -1,0 +1,171 @@
+{
+  "info": {
+    "name": "FitZone - SOA",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    }
+  ],
+  "item": [
+    {
+      "name": "Crear socio",
+      "request": {
+        "method": "POST",
+        "url": "{{baseUrl}}/api/socios",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre\": \"Ana Lopez\",\n  \"correo\": \"ana@correo.com\",\n  \"membresiaHasta\": \"2027-12-31\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Listar socios",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/socios",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Consultar membresia",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/socios/1/membresia",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Crear clase",
+      "request": {
+        "method": "POST",
+        "url": "{{baseUrl}}/api/clases",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre\": \"Yoga\",\n  \"sucursal\": \"Centro\",\n  \"fechaHora\": \"2027-12-01T18:00:00\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Listar clases",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/clases",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Consultar cupo",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/clases/1/cupo",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Inscribir socio",
+      "request": {
+        "method": "POST",
+        "url": "{{baseUrl}}/api/inscripciones",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"socioId\": 1,\n  \"claseId\": 1\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Listar inscripciones",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/inscripciones",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Inscripciones de una clase",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/clases/1/inscripciones",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Cancelar inscripcion",
+      "request": {
+        "method": "DELETE",
+        "url": "{{baseUrl}}/api/inscripciones/1",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ]
+      }
+    }
+  ]
+}
